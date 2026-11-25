@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Log in — FoodSave AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css"></head><body>
+<div id="site-header"></div>
+<main class="container auth-wrap"><div class="card auth-card">
+  <h2>Welcome back</h2><p class="muted">Log in to reserve food, manage listings or accept donations.</p>
+  <div id="err" class="error-box hidden"></div>
+  <form id="f"><div class="field"><label for="email">Email</label><input id="email" type="email" required autocomplete="email"></div>
+  <div class="field"><label for="pw">Password</label><input id="pw" type="password" required autocomplete="current-password"></div>
+  <button class="btn block" id="btn">Log in</button></form>
+  <p style="margin:1rem 0 0">New here? <a href="/register.html">Create an account</a></p>
+  <hr style="border:0;border-top:2px dashed var(--line);margin:1.2rem 0">
+  <p class="small muted" style="margin-bottom:.5rem">Demo accounts (click to fill the form):</p>
+  <div class="row">
+    <button type="button" class="chip" data-e="ayesha@foodsave.test" data-p="demo123">🧑‍🎓 Customer</button>
+    <button type="button" class="chip" data-e="spice@foodsave.test" data-p="demo123">🍛 Business</button>
+    <button type="button" class="chip" data-e="hope@foodsave.test" data-p="demo123">🤝 NGO</button>
+    <button type="button" class="chip" data-e="admin@foodsave.test" data-p="admin123">🛠 Admin</button>
+  </div>
+</div></main>
+<div id="site-footer"></div>
+<script src="/js/app.js"></script><script src="/js/login.js"></script></body></html>

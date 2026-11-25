@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Business dashboard — FoodSave AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css"></head><body>
+<div id="site-header"></div>
+<main class="container"><div class="page-head row between"><div><h1 style="font-size:2.4rem;margin:0" id="hello">Dashboard</h1><p class="muted" style="margin:0">Turn today’s unsold food into revenue or donations.</p></div>
+  <button class="btn" id="newBtn">+ New listing</button></div>
+  <div id="verify" class="error-box hidden">Your business is waiting for verification, so you cannot publish listings yet.</div>
+  <div class="kpis" id="kpis" style="margin-bottom:1.5rem"></div>
+  <div class="tabs"><button class="tab on" data-t="listings">My listings</button><button class="tab" data-t="new">New listing</button><button class="tab" data-t="orders">Reservations <span id="oc"></span></button><button class="tab" data-t="donations">Donation requests <span id="dc"></span></button></div>
+
+  <section id="listings"><div class="table-wrap"><table><thead><tr><th>Food</th><th>Type</th><th>Price</th><th>Left / listed</th><th>Pickup until</th><th>Status</th><th>Actions</th></tr></thead><tbody id="lbody"></tbody></table></div></section>
+
+  <section id="new" class="hidden"><form class="card" id="f">
+    <div id="ferr" class="error-box hidden"></div>
+    <div class="row" style="margin-bottom:1rem"><label class="chip on" id="tSale"><input type="radio" name="type" value="sale" checked hidden>💰 Sell at a discount</label><label class="chip" id="tDon"><input type="radio" name="type" value="donation" hidden>🤝 Donate to NGOs</label></div>
+    <div class="form-grid">
+      <div class="field"><label for="title">Food title</label><input id="title" required placeholder="e.g. Chicken biryani plate"></div>
+      <div class="field"><label for="category">Category</label><div class="row" style="flex-wrap:nowrap"><select id="category"></select><button type="button" class="btn sm outline" id="aiCat" title="AI category suggestion">✨ Suggest</button></div></div>
+    </div>
+    <div class="field"><label for="description">Description</label><textarea id="description" placeholder="What is it, how was it prepared, portion size…"></textarea></div>
+    <div class="form-grid">
+      <div class="field"><label for="quantity">Quantity (portions)</label><input id="quantity" type="number" min="1" value="5" required></div>
+      <div class="field sale"><label for="originalPrice">Original price (Rs.)</label><input id="originalPrice" type="number" min="1"></div>
+      <div class="field sale"><label for="price">Discounted price (Rs.)</label><input id="price" type="number" min="0"></div>
+      <div class="field"><label for="pickupEnd">Pickup deadline</label><input id="pickupEnd" type="datetime-local" required></div>
+    </div>
+    <div class="card flat sale" style="background:var(--mango-soft);margin-bottom:1rem"><div class="row between"><div><strong>✨ AI smart pricing</strong><div class="small muted">Suggests a discount from price, quantity and time left.</div></div><button type="button" class="btn gold sm" id="aiPrice">Suggest discount</button></div><div id="aiOut" class="small hidden" style="margin-top:.8rem"></div></div>
+    <div class="form-grid">
+      <div class="field"><label for="storageInfo">Storage &amp; handling information</label><textarea id="storageInfo" placeholder="e.g. Kept hot above 60°C, packed fresh at 6 PM"></textarea></div>
+      <div class="field"><label for="allergens">Allergens</label><input id="allergens" placeholder="e.g. Contains gluten, dairy"><div class="field" style="margin-top:.8rem"><label for="photo">Photo (optional)</label><input id="photo" type="file" accept="image/*"></div></div>
+    </div>
+    <label class="check field"><input type="checkbox" id="approved"> This food has been safely stored and stays suitable for next-day pickup (allows a deadline up to 36 h instead of 12 h).</label>
+    <label class="check field"><input type="checkbox" id="safe"> I confirm this food is safe and suitable to distribute, and the information above is accurate.</label>
+    <button class="btn" id="pub">Publish listing</button>
+  </form></section>
+
+  <section id="orders" class="hidden"><div class="table-wrap"><table><thead><tr><th>Customer</th><th>Food</th><th>Qty</th><th>Total</th><th>Payment</th><th>Status</th><th>Handover</th></tr></thead><tbody id="obody"></tbody></table></div></section>
+  <section id="donations" class="hidden stack"></section>
+</main>
+<div id="site-footer"></div>
+<script src="/js/app.js"></script><script src="/js/business.js"></script></body></html>

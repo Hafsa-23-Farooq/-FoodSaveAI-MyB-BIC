@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Create account — FoodSave AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css"></head><body>
+<div id="site-header"></div>
+<main class="container auth-wrap"><div class="card auth-card">
+  <h2>Join FoodSave AI</h2>
+  <div id="err" class="error-box hidden"></div>
+  <form id="f">
+    <div class="role-pick" role="radiogroup" aria-label="Account type">
+      <label><input type="radio" name="role" value="customer" checked><span>🧑‍🎓</span>Customer<small>Buy cheaper food</small></label>
+      <label><input type="radio" name="role" value="business"><span>🥐</span>Business<small>List surplus food</small></label>
+      <label><input type="radio" name="role" value="ngo"><span>🤝</span>NGO<small>Receive donations</small></label>
+    </div>
+    <div class="form-grid">
+      <div class="field"><label for="name" id="nameLbl">Full name</label><input id="name" required></div>
+      <div class="field"><label for="phone">Phone</label><input id="phone" type="tel" placeholder="03xx-xxxxxxx"></div>
+    </div>
+    <div class="form-grid">
+      <div class="field"><label for="email">Email</label><input id="email" type="email" required autocomplete="email"></div>
+      <div class="field"><label for="pw">Password (6+ characters)</label><input id="pw" type="password" minlength="6" required autocomplete="new-password"></div>
+    </div>
+    <div class="field only-org hidden"><label for="address">Address</label><input id="address" placeholder="Shop / office address"></div>
+    <div class="field only-business hidden"><label for="btype">Business type</label>
+      <select id="btype"><option>Restaurant</option><option>Bakery</option><option>Café</option><option>Supermarket</option><option>Grocery store</option><option>Other</option></select></div>
+    <div class="field only-ngo hidden"><label for="regno">Registration number</label><input id="regno" placeholder="Charity / NGO registration no."></div>
+    <fieldset style="border:2px solid var(--line);border-radius:12px;margin:0 0 1rem;padding:.8rem 1rem">
+      <legend class="small" style="font-weight:800;padding:0 .4rem">Location</legend>
+      <div class="form-grid"><div class="field"><label for="lat">Latitude</label><input id="lat" type="number" step="any"></div><div class="field"><label for="lng">Longitude</label><input id="lng" type="number" step="any"></div></div>
+      <button type="button" class="btn sm outline" id="geo">📍 Use my current location</button>
+      <p class="hint">Used to show nearby food and send relevant alerts.</p>
+    </fieldset>
+    <div class="only-customer">
+      <div class="field"><label for="radius">Alert radius: <span id="rv">5</span> km</label><input id="radius" type="range" min="1" max="25" value="5"></div>
+      <label class="check field"><input type="checkbox" id="optin" checked> Alert me about new food nearby (max 3 per hour)</label>
+    </div>
+    <p class="hint only-org hidden">Business and NGO accounts are verified before they can publish or request food.</p>
+    <button class="btn block" id="btn">Create account</button>
+  </form>
+  <p style="margin:1rem 0 0">Already registered? <a href="/login.html">Log in</a></p>
+</div></main>
+<div id="site-footer"></div>
+<script src="/js/app.js"></script><script src="/js/register.js"></script></body></html>

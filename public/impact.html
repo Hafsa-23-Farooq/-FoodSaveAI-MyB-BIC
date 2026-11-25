@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impact — FoodSave AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css"></head><body>
+<div id="site-header"></div>
+<main class="container"><div class="page-head"><h1 style="font-size:2.4rem" id="h">Impact</h1><p class="muted" id="sub"></p></div>
+  <div class="kpis" id="kpis"></div>
+  <div class="card" style="margin-top:1.5rem"><h3>Last 14 days</h3><div class="chart" id="chart"></div><div class="chart-labels" id="labels"></div>
+    <div class="legend"><span><i style="background:var(--tomato)"></i>Sold</span><span><i style="background:var(--basil)"></i>Donated</span></div></div>
+  <p class="small muted" id="note" style="margin-top:.6rem"></p>
+  <section id="trends" class="hidden" style="margin-top:2rem"><h2>Demand &amp; waste insights</h2>
+    <div class="grid cols-2"><div class="card"><h3>Unsold portions by weekday <span class="small muted">(average per listing)</span></h3><div class="chart" id="wchart"></div><div class="chart-labels" id="wlabels"></div></div>
+    <div class="card"><h3>✨ AI recommendations</h3><div id="tips"></div><p class="small muted" id="disc"></p></div></div></section>
+  <section id="admin" class="hidden" style="margin-top:2rem"><h2>Organisation verification</h2><p class="muted">Businesses and NGOs must be verified before they can publish or request food.</p>
+    <div class="table-wrap"><table><thead><tr><th>Name</th><th>Type</th><th>Address</th><th>Registration</th><th>Status</th><th></th></tr></thead><tbody id="orgs"></tbody></table></div></section>
+</main>
+<div id="site-footer"></div>
+<script src="/js/app.js"></script><script src="/js/impact.js"></script></body></html>

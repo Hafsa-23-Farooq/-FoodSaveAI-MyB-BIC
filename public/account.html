@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Account settings — FoodSave AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css"></head><body>
+<div id="site-header"></div>
+<main class="container" style="max-width:720px"><div class="page-head"><h1 style="font-size:2.4rem">Account settings</h1></div>
+  <form class="card" id="f">
+    <div class="form-grid"><div class="field"><label for="name">Name</label><input id="name" required></div><div class="field"><label for="phone">Phone</label><input id="phone"></div></div>
+    <div class="field"><label>Email</label><input id="email" disabled></div>
+    <div class="field" id="addrBox"><label for="address">Address</label><input id="address"></div>
+    <div class="form-grid"><div class="field"><label for="lat">Latitude</label><input id="lat" type="number" step="any"></div><div class="field"><label for="lng">Longitude</label><input id="lng" type="number" step="any"></div></div>
+    <button type="button" class="btn sm outline" id="geo" style="margin-bottom:1rem">📍 Use my current location</button>
+    <div id="alerts"><h3>Alerts</h3>
+      <div class="field"><label for="radius">Alert radius: <span id="rv"></span> km</label><input id="radius" type="range" min="1" max="50"></div>
+      <label class="check field" id="optBox"><input type="checkbox" id="optin"> Send me alerts about new food nearby</label>
+      <div class="field" id="catBox"><label>Only these categories (none selected = all)</label><div class="row" id="cats"></div></div></div>
+    <button class="btn">Save changes</button>
+  </form></main>
+<div id="site-footer"></div>
+<script src="/js/app.js"></script><script src="/js/account.js"></script></body></html>

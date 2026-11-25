@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Save food. Save money. — FoodSave AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css"></head><body>
+<div id="site-header"></div>
+<section class="hero"><div class="container hero-grid">
+  <div>
+    <h1>Good food shouldn’t end its day in the bin.</h1>
+    <p class="lead">FoodSave AI connects restaurants, bakeries and grocers with nearby customers and charities, so surplus food gets eaten at a fair price or donated for free.</p>
+    <div class="row"><a class="btn" href="/marketplace.html">Find food near me</a><a class="btn outline" href="/register.html?role=business">List surplus food</a></div>
+    <p class="small muted" style="margin-top:1rem">Save Food. Save Money. Make an Impact.</p>
+  </div>
+  <div class="ticket" aria-label="Example listing">
+    <div class="row between"><span class="badge">Bakery</span><span class="timer" id="heroTimer"></span></div>
+    <h3 style="margin-top:.8rem;font-size:1.5rem">Assorted pastry box</h3>
+    <div class="muted small">Bake House · 1.6 km away · 6 left</div>
+    <div class="tear"></div>
+    <div class="row between"><div class="big">Rs. 200</div><div class="muted"><s>Rs. 450</s><br><strong>56% off</strong></div></div>
+    <p class="small muted" style="margin:.8rem 0 0">Pick up by 9:30 PM · Reserve in the app, show your code at the counter.</p>
+  </div>
+</div></section>
+
+<section class="section" id="how"><div class="container">
+  <h2>How FoodSave AI works</h2>
+  <ol class="steps">
+    <li><strong>Business lists surplus</strong><br><span class="small muted">Food, quantity, price, pickup window and storage info.</span></li>
+    <li><strong>AI suggests a discount</strong><br><span class="small muted">Category and price recommendations. The business decides.</span></li>
+    <li><strong>Nearby people are alerted</strong><br><span class="small muted">Only opted-in customers inside their chosen radius.</span></li>
+    <li><strong>Reserve and collect</strong><br><span class="small muted">Pay less, pick up before the deadline with a code.</span></li>
+    <li><strong>Or donate</strong><br><span class="small muted">Registered NGOs get an alert and arrange collection.</span></li>
+    <li><strong>Impact is recorded</strong><br><span class="small muted">Sales, donations and food rescued, tracked separately.</span></li>
+  </ol>
+</div></section>
+
+<section class="section alt"><div class="container">
+  <h2>Built for three kinds of people</h2>
+  <div class="grid cols-3">
+    <div class="card path"><h3>Food businesses</h3><p class="muted">Recover value from unsold stock, see which days create the most surplus and publish a listing in a minute.</p><a class="btn sm" href="/register.html?role=business">Register a business</a></div>
+    <div class="card path y"><h3>Customers</h3><p class="muted">Students and families find discounted meals nearby, filter by distance, price and pickup time.</p><a class="btn sm gold" href="/register.html?role=customer">Create a free account</a></div>
+    <div class="card path g"><h3>Charities &amp; NGOs</h3><p class="muted">Get early alerts for donation-ready food and coordinate collection before the safe deadline. Always free.</p><a class="btn sm green" href="/register.html?role=ngo">Join as an NGO</a></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="row between"><h2>Available right now</h2><a href="/marketplace.html">See all listings</a></div>
+  <div class="grid cols-3" id="preview"><p class="muted">Loading listings…</p></div>
+</div></section>
+
+<section class="section alt"><div class="container">
+  <h2>Impact so far</h2>
+  <div class="kpis" id="impact"></div>
+  <p class="small muted" id="impactNote" style="margin-top:.8rem"></p>
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="notice"><h3>Food safety comes first</h3>
+    <p style="margin:0">Businesses must give accurate storage and handling details and confirm the food is safe. Expired or withdrawn listings disappear automatically, and food that cannot be stored safely is never relisted. AI may flag missing information, but it never declares food safe.</p></div>
+</div></section>
+<div id="site-footer"></div>
+<script src="/js/app.js"></script><script src="/js/index.js"></script></body></html>
